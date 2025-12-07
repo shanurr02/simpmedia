@@ -43,976 +43,206 @@
 <body style="margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:linear-gradient(135deg, #0567DA 0%, #034EA2 50%, #02366D 100%);color:#ffffff;">
 
   <!-- Navigation -->
-  <!-- Navigation -->
-<nav class="simp-nav">
-  <div class="nav-safe-area">
-    <div class="nav-inner">
+  <nav style="position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(2, 6, 23, 0.8);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1280px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;justify-content:space-between;">
       <!-- Logo -->
-      <a href="#" class="nav-logo">
-        <span class="logo-highlight">Simp</span>Media
+      <a href="#" style="display:flex;align-items:center;text-decoration:none;color:white;font-size:22px;font-weight:700;letter-spacing:-0.5px;">
+        <span style="background:linear-gradient(90deg, #22d3ee, #3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Simp</span>Media
       </a>
-
-      <!-- Desktop / Tablet Navigation -->
-      <div class="nav-links">
-        <div class="nav-items">
-          <a href="#services" class="nav-link">Services</a>
-          <a href="#simp-system" class="nav-link">Solutions</a>
-          <a href="#process" class="nav-link">Process</a>
-          <a href="#contact" class="nav-link">Contact</a>
+      
+      <!-- Desktop Navigation -->
+      <div style="display:flex;align-items:center;gap:32px;
+      ">
+        <div style="display:flex;gap:28px;
+        ">
+          <a href="#services" style="color:#e2e8f0;text-decoration:none;font-weight:500;font-size:15px;transition:color 0.2s ease;position:relative;padding:8px 0;
+          ">Services</a>
+          <a href="#simp-system" style="color:#e2e8f0;text-decoration:none;font-weight:500;font-size:15px;transition:color 0.2s ease;position:relative;padding:8px 0;
+          ">Solutions</a>
+          <a href="#process" style="color:#e2e8f0;text-decoration:none;font-weight:500;font-size:15px;transition:color 0.2s ease;position:relative;padding:8px 0;
+          ">Process</a>
+          <a href="#contact" style="color:#e2e8f0;text-decoration:none;font-weight:500;font-size:15px;transition:color 0.2s ease;position:relative;padding:8px 0;
+          ">Contact</a>
         </div>
-        <a href="#contact" class="nav-cta">Get Started</a>
+        <a href="#contact" style="background:linear-gradient(135deg, #3b82f6, #6366f1);color:white;text-decoration:none;font-weight:500;font-size:14px;padding:10px 22px;border-radius:8px;transition:all 0.3s ease;box-shadow:0 4px 15px -3px rgba(59, 130, 246, 0.3);white-space:nowrap;
+        ">Get Started</a>
       </div>
-
-      <!-- Mobile Menu Button -->
-      <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+      
+      <!-- Mobile Menu Button (Hidden by default) -->
+      <button id="mobileMenuBtn" style="display:none;background:none;border:none;color:white;font-size:24px;cursor:pointer;">
+        ☰
       </button>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="mobile-menu">
-      <a href="#services" class="mobile-link">Services</a>
-      <a href="#simp-system" class="mobile-link">Solutions</a>
-      <a href="#process" class="mobile-link">Process</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-      <a href="#contact" class="mobile-cta">Get Started</a>
+    
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobileMenu" style="display:none;background:rgba(2, 6, 23, 0.95);padding:20px 24px 30px;border-top:1px solid rgba(255,255,255,0.1);
+    ">
+      <div style="display:flex;flex-direction:column;gap:20px;
+      ">
+        <a href="#services" style="color:#e2e8f0;text-decoration:none;font-weight:500;font-size:16px;transition:color 0.2s ease;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+        ">Services</a>
+        <a href="#simp-system" style="color:#e2e8f0;text-decoration:none;font-weight:500;font-size:16px;transition:color 0.2s ease;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+        ">Solutions</a>
+        <a href="#process" style="color:#e2e8f0;text-decoration:none;font-weight:500;font-size:16px;transition:color 0.2s ease;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+        ">Process</a>
+        <a href="#contact" style="color:#e2e8f0;text-decoration:none;font-weight:500;font-size:16px;transition:color 0.2s ease;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+        ">Contact</a>
+        <a href="#contact" style="background:linear-gradient(135deg, #3b82f6, #6366f1);color:white;text-decoration:none;font-weight:500;font-size:15px;padding:12px 20px;border-radius:8px;transition:all 0.3s ease;text-align:center;margin-top:10px;
+        ">Get Started</a>
+      </div>
     </div>
-  </div>
-</nav>
-
-<style>
-  :root {
-    --nav-bg: rgba(2, 6, 23, 0.85);
-    --nav-border: rgba(148, 163, 184, 0.3);
-    --nav-text: #e2e8f0;
-    --nav-white: #ffffff;
-    --nav-max-width: 1280px;
-  }
-
-  /* Global reset for consistency across devices */
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
-  }
-
-  .simp-nav {
-    position: fixed;
-    inset-inline: 0;
-    top: 0;
-    z-index: 1000;
-    background: var(--nav-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--nav-border);
-  }
-
-  /* For notched devices (iPhone, etc.) */
-  .nav-safe-area {
-    padding-top: env(safe-area-inset-top, 0px);
-  }
-
-  .nav-inner {
-    max-width: var(--nav-max-width);
-    margin: 0 auto;
-    padding: 0 clamp(12px, 4vw, 24px);
-    height: clamp(56px, 7vh, 72px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .nav-logo {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--nav-white);
-    font-size: clamp(18px, 2.2vw, 22px);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    white-space: nowrap;
-  }
-
-  .logo-highlight {
-    background: linear-gradient(90deg, #22d3ee, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-right: 4px;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: clamp(18px, 3vw, 32px);
-  }
-
-  .nav-items {
-    display: flex;
-    gap: clamp(16px, 2.5vw, 28px);
-  }
-
-  .nav-link {
-    color: var(--nav-text);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: clamp(13px, 1.7vw, 15px);
-    position: relative;
-    padding: 8px 0;
-    transition: color 0.2s ease;
-  }
-
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #22d3ee, #3b82f6);
-    border-radius: 999px;
-    transition: width 0.22s ease;
-  }
-
-  .nav-link:hover {
-    color: #ffffff;
-  }
-
-  .nav-link:hover::after {
-    width: 100%;
-  }
-
-  .nav-cta {
-    background: linear-gradient(135deg, #3b82f6, #6366f1);
-    color: var(--nav-white);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: clamp(12px, 1.7vw, 14px);
-    padding: 10px 22px;
-    border-radius: 999px;
-    box-shadow: 0 4px 15px -3px rgba(59, 130, 246, 0.4);
-    white-space: nowrap;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
-  }
-
-  .nav-cta:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px -6px rgba(59, 130, 246, 0.6);
-    opacity: 0.96;
-  }
-
-  /* Mobile Menu Button (hamburger) */
-  .mobile-menu-btn {
-    display: none; /* shown on small screens only */
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 40px;
-    height: 32px;
-    padding: 0;
-    position: relative;
-    flex-shrink: 0;
-    touch-action: manipulation;
-  }
-
-  .mobile-menu-btn span {
-    position: absolute;
-    left: 4px;
-    right: 4px;
-    height: 3px;
-    border-radius: 999px;
-    background: var(--nav-white);
-    transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease;
-  }
-
-  .mobile-menu-btn span:nth-child(1) {
-    top: 7px;
-  }
-
-  .mobile-menu-btn span:nth-child(2) {
-    top: 14px;
-  }
-
-  .mobile-menu-btn span:nth-child(3) {
-    top: 21px;
-  }
-
-  .mobile-menu-btn.active span:nth-child(1) {
-    top: 14px;
-    transform: rotate(45deg);
-  }
-
-  .mobile-menu-btn.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .mobile-menu-btn.active span:nth-child(3) {
-    top: 14px;
-    transform: rotate(-45deg);
-  }
-
-  /* Mobile menu container */
-  .mobile-menu {
-    background: rgba(2, 6, 23, 0.98);
-    border-top: 1px solid var(--nav-border);
-    padding: 0 clamp(12px, 4vw, 24px) 10px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.25s ease;
-  }
-
-  .mobile-menu.open {
-    max-height: 360px; /* enough for links + CTA */
-  }
-
-  .mobile-link {
-    display: block;
-    color: var(--nav-text);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-  }
-
-  .mobile-link:last-of-type {
-    border-bottom: none;
-  }
-
-  .mobile-link:hover {
-    color: #ffffff;
-  }
-
-  .mobile-cta {
-    display: block;
-    background: linear-gradient(135deg, #3b82f6, #6366f1);
-    color: var(--nav-white);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    padding: 12px 20px;
-    border-radius: 999px;
-    text-align: center;
-    margin: 14px 0 14px;
-  }
-
-  /* ========= BREAKPOINTS ========= */
-
-  /* Large screens (desktops & big laptops) */
-  @media (min-width: 1025px) {
-    .nav-inner {
-      height: 72px;
-    }
-  }
-
-  /* Medium screens: tablets / small laptops (landscape tablets) */
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .nav-inner {
-      height: 68px;
-    }
-    .nav-items {
-      gap: 18px;
-    }
-    .nav-cta {
-      padding-inline: 18px;
-    }
-  }
-
-  /* Small screens: phones / small tablets */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none; /* hide desktop menu */
-    }
-
-    .mobile-menu-btn {
-      display: block;
-    }
-
-    .nav-inner {
-      padding-inline: 16px;
-      height: 60px;
-    }
-  }
-
-  /* Extra small devices (very small phones, etc.) */
-  @media (max-width: 400px) {
-    .nav-logo {
-      font-size: 17px;
-    }
-    .mobile-link {
-      font-size: 14px;
-      padding: 10px 0;
-    }
-    .mobile-cta {
-      font-size: 14px;
-      padding: 10px 16px;
-    }
-  }
-
-  /* Respect users that prefer reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      scroll-behavior: auto !important;
-      transition: none !important;
-      animation: none !important;
-    }
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.getElementById("mobileMenuBtn");
-    const menu = document.getElementById("mobileMenu");
-    if (!btn || !menu) return;
-
-    const toggleMenu = () => {
-      btn.classList.toggle("active");
-      menu.classList.toggle("open");
-    };
-
-    btn.addEventListener("click", toggleMenu);
-
-    // Close menu when a link is clicked (better UX)
-    menu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        btn.classList.remove("active");
-        menu.classList.remove("open");
-      });
-    });
-
-    // Optional: auto-close menu on resize to desktop
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        btn.classList.remove("active");
-        menu.classList.remove("open");
-      }
-    });
-  });
-</script>
-
+  </nav>
 
   <!-- Add some padding to account for fixed navbar -->
   <div style="height:10px;"></div>
 
-  <!-- HERO WRAPPER -->
-<div class="hero-wrapper">
-  <!-- Animated background elements -->
-  <div id="particles-js" class="hero-particles"></div>
-  <div class="hero-bg-overlay"></div>
+  <div style="min-height:90vh;background:radial-gradient(circle at top,#1f2937 0,transparent 55%),radial-gradient(circle at bottom,#020617 0,transparent 55%);padding:0 16px 8px 16px;position:relative;overflow:hidden;">
+    <!-- Animated background elements -->
+    <div id="particles-js" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></div>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.1), transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.1), transparent 25%);z-index:0;"></div>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-section">
-    <!-- Animated background gradient panels -->
-    <div class="hero-gradient-layer hero-gradient-left"></div>
-    <div class="hero-gradient-layer hero-gradient-right"></div>
+    <!-- 1. HERO SECTION -->
+  <section id="hero" style="max-width:1200px;margin:0 auto;padding:60px 24px 80px;display:flex;flex-wrap:wrap;gap:48px;align-items:center;position:relative;z-index:1;">
+
+    <!-- Animated background elements -->
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;overflow:hidden;">
+      <div style="position:absolute;top:-50%;left:-10%;width:60%;height:200%;background:radial-gradient(circle at center, rgba(34,211,238,0.12) 0%, transparent 60%);transform:rotate(30deg);"></div>
+      <div style="position:absolute;bottom:-30%;right:-10%;width:60%;height:200%;background:radial-gradient(circle at center, rgba(168,85,247,0.08) 0%, transparent 70%);transform:rotate(-15deg);"></div>
+    </div>
 
     <!-- Hero Text -->
-    <div class="hero-text">
+    <div style="flex:1 1 500px;min-width:280px;position:relative;z-index:2;padding-top:40px;">
       <!-- Animated Tagline -->
-      <div class="tagline-wrapper">
-        <div class="tagline-pill">
-          <div class="tagline-dot"></div>
-          <span id="typewriter" class="tagline-text"></span>
+      <div class="tagline-wrapper" style="display:inline-block;margin-bottom:24px;">
+        <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(15,23,42,0.8);backdrop-filter:blur(8px);border:1px solid rgba(148,163,184,0.3);">
+          <div style="width:8px;height:8px;border-radius:50%;background:#22d3ee;box-shadow:0 0 12px rgba(34,211,238,0.8);flex-shrink:0;animation:pulseGlow 2s infinite;"></div>
+          <span id="typewriter" style="font-size:14px;color:#a5b4fc;font-weight:500;letter-spacing:0.5px;"></span>
         </div>
       </div>
-
+      
       <!-- Main Heading -->
-      <h1 class="hero-title">
-        We build
-        <span class="hero-title-highlight">
-          AI-powered growth engines
-        </span>
-        for the next generation of brands.
+      <h1 style="font-size:clamp(2.2rem, 5vw, 3.5rem);font-weight:800;line-height:1.15;color:#f9fafb;margin:0 0 24px 0;background:linear-gradient(90deg, #f9fafb, #e0e7ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;">
+        We build <span style="background:linear-gradient(90deg, #22d3ee, #3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">AI-powered growth engines</span> for the next generation of brands.
       </h1>
-
+      
       <!-- Sub-heading -->
-      <p class="hero-subtitle">
-        From UGC to automation to performance — we help brands grow faster with AI,
-        creativity, and code.
+      <p style="font-size:clamp(1rem, 1.5vw, 1.2rem);color:#e2e8f0;line-height:1.6;margin:0 0 40px 0;max-width:600px;">
+        From UGC to automation to performance — we help brands grow faster with AI, creativity, and code.
       </p>
-
+      
       <!-- CTA Buttons -->
-      <div class="hero-cta-row">
-        <a href="#contact" class="hero-cta hero-cta-primary">
+      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:32px;">
+        <a href="#contact" style="display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:10px;background:linear-gradient(135deg, #3b82f6, #6366f1);color:white;text-decoration:none;font-weight:500;font-size:15px;transition:all 0.3s ease;box-shadow:0 4px 15px -3px rgba(59, 130, 246, 0.3);border:1px solid rgba(255,255,255,0.1);">
           Get AI Solutions for My Brand
         </a>
-        <a href="#divisions" class="hero-cta hero-cta-secondary">
+        <a href="#divisions" style="display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:10px;background:rgba(255,255,255,0.1);color:#e2e8f0;text-decoration:none;font-weight:500;font-size:15px;transition:all 0.3s ease;border:1px solid rgba(255,255,255,0.1);">
           Explore Our Divisions
         </a>
       </div>
     </div>
 
     <!-- Laptop Preview -->
-    <div class="hero-media">
-      <div class="laptop-card">
+    <div style="flex:1 1 500px;min-width:280px;position:relative;z-index:2;perspective:1000px;">
+      <div style="position:relative;width:100%;max-width:520px;margin:0 auto;aspect-ratio:1/0.7;border-radius:24px;overflow:hidden;background:radial-gradient(circle at 0% 0%,#22d3ee33,transparent 55%),radial-gradient(circle at 100% 100%,#a855f733,transparent 55%),rgba(15,23,42,0.98);border:1px solid rgba(148,163,184,0.6);transform-style:preserve-3d;transform:rotateY(-5deg) rotateX(5deg);box-shadow:0 20px 40px -10px rgba(0,0,0,0.3);transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
         <!-- Animated gradient background -->
-        <div class="laptop-bg"></div>
+        <div style="position:absolute;inset:0;background:radial-gradient(circle at 10% 20%,rgba(56,189,248,0.18),transparent 60%),radial-gradient(circle at 80% 70%,rgba(168,85,247,0.2),transparent 60%),radial-gradient(circle at 50% 50%,rgba(15,23,42,0.9),rgba(15,23,42,1));background-size:200% 200%;animation:gradientMove 18s ease infinite;"></div>
 
         <!-- Laptop Screen -->
-        <div class="laptop-screen">
+        <div style="position:absolute;top:16px;left:16px;right:16px;bottom:16px;background:#0f172a;border-radius:12px;overflow:hidden;border:1px solid rgba(148,163,184,0.3);">
           <!-- Laptop Top Bar -->
-          <div class="laptop-topbar">
-            <div class="dot dot-red"></div>
-            <div class="dot dot-amber"></div>
-            <div class="dot dot-green"></div>
-            <div class="laptop-title">UGDex</div>
+          <div style="height:36px;background:linear-gradient(to right, #1e293b, #0f172a);border-bottom:1px solid rgba(148,163,184,0.2);display:flex;align-items:center;padding:0 16px;gap:8px;">
+            <div style="width:12px;height:12px;border-radius:50%;background:#ef4444;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:#f59e0b;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:#22c55e;"></div>
+            <div style="margin-left:auto;font-size:12px;color:#94a3b8;font-weight:500;">UGDex</div>
           </div>
-
+          
           <!-- Laptop Content -->
-          <div class="laptop-content">
-            <div class="chip-active">
-              <div class="chip-dot"></div>
-              <span>AI Campaign Active</span>
+          <div style="padding:20px;height:calc(100% - 36px);overflow:hidden;position:relative;">
+            <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 12px;background:rgba(34,211,238,0.1);border-radius:999px;border:1px solid rgba(34,211,238,0.2);margin-bottom:16px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#22d3ee;"></div>
+              <span style="font-size:12px;color:#7dd3fc;">AI Campaign Active</span>
             </div>
-
-            <h4 class="laptop-heading">Campaign Performance</h4>
-            <p class="laptop-subtext">
+            
+            <h4 style="font-size:16px;color:#f8fafc;margin:0 0 8px 0;">Campaign Performance</h4>
+            <p style="font-size:12px;color:#94a3b8;margin:0 0 16px 0;line-height:1.5;">
               Analyzing 32 active creators • 147 assets this month
             </p>
-
-            <div class="laptop-metrics">
-              <div class="metric-card">
-                <div class="metric-value metric-blue">+68%</div>
-                <div class="metric-label">UGC ROAS</div>
+            
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+              <div style="background:rgba(15,23,42,0.6);border:1px solid rgba(148,163,184,0.1);border-radius:8px;padding:12px;">
+                <div style="font-size:20px;font-weight:700;color:#22d3ee;margin-bottom:4px;">+68%</div>
+                <div style="font-size:11px;color:#94a3b8;">UGC ROAS</div>
               </div>
-              <div class="metric-card">
-                <div class="metric-value metric-purple">3.2x</div>
-                <div class="metric-label">Avg. ROI</div>
+              <div style="background:rgba(15,23,42,0.6);border:1px solid rgba(148,163,184,0.1);border-radius:8px;padding:12px;">
+                <div style="font-size:20px;font-weight:700;color:#a78bfa;margin-bottom:4px;">3.2x</div>
+                <div style="font-size:11px;color:#94a3b8;">Avg. ROI</div>
               </div>
             </div>
-
-            <div class="laptop-progress-wrap">
-              <div class="laptop-progress-track">
-                <div class="laptop-progress-fill"></div>
+            
+            <div style="height:80px;background:linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.8) 100%);position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;">
+              <div style="width:80%;height:4px;background:rgba(255,255,255,0.1);border-radius:2px;position:relative;overflow:hidden;">
+                <div style="position:absolute;left:0;top:0;bottom:0;width:65%;background:linear-gradient(90deg, #22d3ee, #3b82f6);border-radius:2px;"></div>
               </div>
             </div>
           </div>
         </div>
-      </div> <!-- /laptop-card -->
-    </div> <!-- /hero-media -->
+      </div>
+    </div>
   </section>
-</div>
+   
+    </div>
 
-<style>
-  :root {
-    --hero-bg-top: #1f2937;
-    --hero-bg-bottom: #020617;
-    --hero-text-main: #f9fafb;
-    --hero-text-muted: #e2e8f0;
-    --hero-text-soft: #94a3b8;
-    --hero-border-soft: rgba(148, 163, 184, 0.3);
-  }
+    
 
-  * {
-    box-sizing: border-box;
-  }
-
-  .hero-wrapper {
-    min-height: 90vh;
-    position: relative;
-    padding: 0 16px 8px;
-    overflow: hidden;
-    background:
-      radial-gradient(circle at top, var(--hero-bg-top) 0, transparent 55%),
-      radial-gradient(circle at bottom, var(--hero-bg-bottom) 0, transparent 55%);
-  }
-
-  .hero-particles {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .hero-bg-overlay {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.1), transparent 25%),
-      radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.1), transparent 25%);
-    z-index: 0;
-  }
-
-  .hero-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 24px 80px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 48px;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-gradient-layer {
-    position: absolute;
-    width: 60%;
-    height: 200%;
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  .hero-gradient-left {
-    top: -50%;
-    left: -10%;
-    background: radial-gradient(circle at center, rgba(34, 211, 238, 0.12) 0%, transparent 60%);
-    transform: rotate(30deg);
-  }
-
-  .hero-gradient-right {
-    bottom: -30%;
-    right: -10%;
-    background: radial-gradient(circle at center, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
-    transform: rotate(-15deg);
-  }
-
-  .hero-text {
-    flex: 1 1 380px;
-    min-width: 280px;
-    position: relative;
-    z-index: 2;
-    padding-top: 40px;
-  }
-
-  .tagline-wrapper {
-    display: inline-block;
-    margin-bottom: 24px;
-  }
-
-  .tagline-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 999px;
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--hero-border-soft);
-  }
-
-  .tagline-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #22d3ee;
-    box-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
-    flex-shrink: 0;
-    animation: pulseGlow 2s infinite;
-  }
-
-  .tagline-text {
-    font-size: 14px;
-    color: #a5b4fc;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-  }
-
-  .hero-title {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.15;
-    color: var(--hero-text-main);
-    margin: 0 0 24px;
-    background: linear-gradient(90deg, #f9fafb, #e0e7ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -0.03em;
-  }
-
-  .hero-title-highlight {
-    background: linear-gradient(90deg, #22d3ee, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero-subtitle {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    color: var(--hero-text-muted);
-    line-height: 1.6;
-    margin: 0 0 32px;
-    max-width: 600px;
-  }
-
-  .hero-cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 16px;
-  }
-
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 32px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-    will-change: transform, box-shadow;
-  }
-
-  .hero-cta-primary {
-    background: linear-gradient(135deg, #3b82f6, #6366f1);
-    color: #ffffff;
-    box-shadow: 0 4px 15px -3px rgba(59, 130, 246, 0.3);
-  }
-
-  .hero-cta-secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: #e2e8f0;
-  }
-
-  .hero-media {
-    flex: 1 1 280px;
-    min-width: 280px;
-    position: relative;
-    z-index: 2;
-    perspective: 1000px;
-  }
-
-  .laptop-card {
-    position: relative;
-    width: 100%;
-    max-width: 520px;
-    margin: 0 auto;
-    aspect-ratio: 1 / 0.7;
-    border-radius: 24px;
-    overflow: hidden;
-    background:
-      radial-gradient(circle at 0% 0%, #22d3ee33, transparent 55%),
-      radial-gradient(circle at 100% 100%, #a855f733, transparent 55%),
-      rgba(15, 23, 42, 0.98);
-    border: 1px solid rgba(148, 163, 184, 0.6);
-    transform-style: preserve-3d;
-    transform: rotateY(-5deg) rotateX(5deg);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: floatSoft 10s ease-in-out infinite;
-  }
-
-  .laptop-card:hover {
-    transform: rotateY(-2deg) rotateX(3deg) translateY(-4px);
-    box-shadow: 0 24px 60px -18px rgba(15, 23, 42, 0.9);
-  }
-
-  .laptop-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.18), transparent 60%),
-      radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.2), transparent 60%),
-      radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1));
-    background-size: 200% 200%;
-    animation: gradientMove 18s ease infinite;
-  }
-
-  .laptop-screen {
-    position: absolute;
-    inset: 16px;
-    background: #0f172a;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(148, 163, 184, 0.3);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .laptop-topbar {
-    height: 36px;
-    background: linear-gradient(to right, #1e293b, #0f172a);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-    gap: 8px;
-  }
-
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-
-  .dot-red {
-    background: #ef4444;
-  }
-
-  .dot-amber {
-    background: #f59e0b;
-  }
-
-  .dot-green {
-    background: #22c55e;
-  }
-
-  .laptop-title {
-    margin-left: auto;
-    font-size: 12px;
-    color: #94a3b8;
-    font-weight: 500;
-  }
-
-  .laptop-content {
-    padding: 16px 20px 0;
-    position: relative;
-    flex: 1;
-    overflow: hidden;
-  }
-
-  .chip-active {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 12px;
-    background: rgba(34, 211, 238, 0.1);
-    border-radius: 999px;
-    border: 1px solid rgba(34, 211, 238, 0.2);
-    margin-bottom: 14px;
-  }
-
-  .chip-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #22d3ee;
-  }
-
-  .chip-active span {
-    font-size: 12px;
-    color: #7dd3fc;
-  }
-
-  .laptop-heading {
-    font-size: 16px;
-    color: #f8fafc;
-    margin: 0 0 6px;
-  }
-
-  .laptop-subtext {
-    font-size: 12px;
-    color: #94a3b8;
-    margin: 0 0 16px;
-    line-height: 1.5;
-  }
-
-  .laptop-metrics {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-
-  .metric-card {
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(148, 163, 184, 0.1);
-    border-radius: 8px;
-    padding: 12px;
-  }
-
-  .metric-value {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-
-  .metric-blue {
-    color: #22d3ee;
-  }
-
-  .metric-purple {
-    color: #a78bfa;
-  }
-
-  .metric-label {
-    font-size: 11px;
-    color: #94a3b8;
-  }
-
-  .laptop-progress-wrap {
-    height: 80px;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.85) 100%);
-    position: absolute;
-    inset-inline: 0;
-    bottom: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 16px;
-  }
-
-  .laptop-progress-track {
-    width: 80%;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 2px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .laptop-progress-fill {
-    position: absolute;
-    inset-block: 0;
-    left: 0;
-    width: 65%;
-    background: linear-gradient(90deg, #22d3ee, #3b82f6);
-    border-radius: 2px;
-  }
-
-  /* Hover effects for CTAs */
-  #hero .hero-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px -5px rgba(34, 211, 238, 0.5);
-  }
-
-  #hero .hero-cta-secondary:hover {
-    background: rgba(30, 41, 59, 0.8);
-    border-color: rgba(148, 163, 184, 0.6);
-  }
-
-  /* Keyframes */
-  @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  @keyframes floatSoft {
-    0%, 100% { transform: rotateY(-5deg) rotateX(5deg) translateY(0); }
-    50% { transform: rotateY(-4deg) rotateX(4deg) translateY(-10px); }
-  }
-
-  @keyframes pulseGlow {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.2); }
-  }
-
-  /* ========== RESPONSIVE BREAKPOINTS ========== */
-
-  /* Tablets + small laptops */
-  @media (max-width: 1024px) {
-    .hero-section {
-      padding: 80px 16px 72px;
-      gap: 36px;
+  <style>
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-    .hero-subtitle {
-      max-width: 100%;
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0) translateZ(0); }
+      50% { transform: translateY(-10px) translateZ(10px); }
     }
-  }
-
-  /* Mobiles (portrait) & small tablets */
-  @media (max-width: 768px) {
-    .hero-section {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 80px 12px 64px;
+    #hero a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px -5px rgba(34,211,238,0.5);
     }
-    .hero-text {
-      padding-top: 24px;
+    #hero a:last-child:hover {
+      background: rgba(30,41,59,0.8);
+      border-color: rgba(148,163,184,0.6);
     }
-    .hero-title {
-      font-size: clamp(1.9rem, 7vw, 2.4rem);
-    }
-    .hero-subtitle {
-      font-size: 0.98rem;
-      margin-bottom: 24px;
-    }
-    .hero-cta-row {
-      flex-direction: column;
-      width: 100%;
-      align-items: stretch;
-    }
-    .hero-cta {
-      width: 100%;
-      justify-content: center;
-    }
-    .hero-media {
-      width: 100%;
-    }
-    .laptop-card {
-      max-width: 420px;
-      margin-top: 8px;
-      transform: rotateY(0deg) rotateX(3deg);
-    }
-  }
-
-  /* Extra small phones */
-  @media (max-width: 480px) {
-    .hero-wrapper {
-      padding-inline: 10px;
-    }
-    .hero-section {
-      padding-inline: 8px;
-      gap: 28px;
-    }
-    .hero-text {
-      padding-top: 16px;
-    }
-    .tagline-text {
-      font-size: 13px;
-      white-space: normal;
-    }
-    .hero-title {
-      font-size: 1.8rem;
-    }
-    .hero-subtitle {
-      font-size: 0.95rem;
-    }
-    .laptop-card {
-      max-width: 100%;
-      aspect-ratio: 4 / 3;
-    }
-  }
-
-  /* Respect reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation: none !important;
-      transition: none !important;
-      scroll-behavior: auto !important;
-    }
-  }
-</style>
-
+  </style>
 
 
     <!-- 2. THE SIMP SYSTEM OF GROWTH (DIVISIONS OVERVIEW) -->
 
 
 
-<section id="simp-benefits" style="background:#02010b;color:#fff;padding:30px 24px;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Inter',system-ui;">
+
+<section id="simp-benefits" style="background:#02010b;color:#fff;padding:90px 24px;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Inter',system-ui;">
   <div style="max-width:1200px;margin:0 auto;">
 
     <!-- Top Section -->
     <div style="text-align:left;margin-bottom:50px;max-width:800px;">
       <h2 style="
-        margin: 0; 
-        font-size: clamp(32px, 4vw, 52px);
-        line-height: 1.05;
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        background: linear-gradient(90deg, #22d3ee, #3b82f6, #8b5cf6, #ec4899);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: inline-block;
-        background-size: 200% auto;
-        animation: gradientFlow 8s ease infinite;
-      ">
-        The SIMP System of Growth
-      </h2>
+  margin: 0; 
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: linear-gradient(90deg, #22d3ee, #3b82f6, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  background-size: 200% auto;
+  animation: gradientFlow 8s ease infinite;
+">
+  The SIMP System of Growth
+</h2>
       <p style="margin:14px 0 6px;font-size:15px;line-height:1.6;color:#e5e7eb;">
         Every brand is a system. Some grow linearly. Ours grow exponentially.
       </p>
@@ -1021,9 +251,16 @@
         content to automation, web, and performance.
       </p>
     </div>
-
+    <!-- <style>
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style> -->
     <!-- Cards Grid -->
-    <div class="simp-grid">
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;">
+
       <!-- Card 1 -->
       <a href="#ugdex" class="simp-card-link" style="text-decoration:none;color:inherit;">
         <div class="simp-card">
@@ -1112,23 +349,11 @@
           </div>
         </div>
       </a>
+
     </div>
   </div>
 
   <style>
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* GRID (desktop default: 4 columns) */
-    #simp-benefits .simp-grid {
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:26px;
-    }
-
     /* Card */
     #simp-benefits .simp-card {
       background:#050509;
@@ -1242,70 +467,27 @@
     #simp-benefits .simp-3 { box-shadow:0 0 60px rgba(167,139,250,0.9); }
     #simp-benefits .simp-4 { box-shadow:0 0 60px rgba(251,191,36,0.9); }
 
-    /* ================== RESPONSIVE ================== */
-
-    /* Tablets / small laptops – 2 columns */
     @media (max-width:1024px){
-      #simp-benefits {
-        padding:80px 20px;
-      }
-      #simp-benefits .simp-grid{
+      #simp-benefits > div > div:last-child{
         grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:22px;
-      }
-      #simp-benefits .simp-card-inner{
-        height:230px;
       }
     }
 
-    /* Phones / small tablets – 1 column */
     @media (max-width:640px){
-      #simp-benefits{
-        padding:64px 16px;
-      }
-      #simp-benefits .simp-grid{
+      #simp-benefits > div > div:last-child{
         grid-template-columns:1fr;
-        gap:20px;
-      }
-      #simp-benefits .simp-card{
-        padding:16px 16px 20px;
-      }
-      #simp-benefits .simp-card-inner{
-        height:210px;
-      }
-      #simp-benefits .simp-icon{
-        width:135px;
-        height:135px;
-      }
-      #simp-benefits .simp-icon-symbol{
-        font-size:48px;
-      }
-    }
-
-    /* Very small phones */
-    @media (max-width:420px){
-      #simp-benefits{
-        padding:56px 14px;
-      }
-      #simp-benefits .simp-card-inner{
-        height:200px;
-      }
-      #simp-benefits .simp-icon{
-        width:120px;
-        height:120px;
-      }
-      #simp-benefits .simp-icon-symbol{
-        font-size:42px;
       }
     }
   </style>
 </section>
 
+
+
     
 
 
     <!-- 3. OUR EDGE / WHY CHOOSE SIMP MEDIA -->
-<section id="simp-pillars" style="position:relative;padding:36px 24px;max-width:1200px;margin:0 auto;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Inter',system-ui,sans-serif;">
+<section id="simp-pillars" style="position:relative;padding:96px 24px;max-width:1200px;margin:0 auto;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Inter',system-ui,sans-serif;">
   <!-- Background glow -->
   <div style="position:absolute;inset:-40%;background:
       radial-gradient(circle at 10% 0%,rgba(129,140,248,0.30),transparent 60%),
@@ -1414,7 +596,7 @@
     </div>
   </div>
 
-  <div class="simp-footnote" style="position:relative;z-index:1;text-align:center;margin-top:28px;font-size:11px;color:#9ca3af;">
+  <div style="position:relative;z-index:1;text-align:center;margin-top:28px;font-size:11px;color:#9ca3af;">
     A single view of how SIMP Media’s four disciplines work together around your brand.
   </div>
 
@@ -1517,84 +699,13 @@
       animation-play-state:running !important;
     }
 
-    /* ========== RESPONSIVE BREAKPOINTS ========== */
-
-    /* Tablets / small laptops */
-    @media (max-width:1024px){
-      #simp-pillars{
-        padding:84px 20px;
-      }
-      #simp-pillars .simp-diagram{
-        width:min(460px,90vw);
-      }
-    }
-
-    /* Tablets & large phones (portrait) */
-    @media (max-width:768px){
-      #simp-pillars{
-        padding:76px 16px;
-      }
-      #simp-pillars .simp-heading{
-        margin-bottom:44px;
-        padding:0 8px;
-      }
-      #simp-pillars .simp-diagram-wrap{
-        justify-content:center;
-      }
-      #simp-pillars .simp-diagram{
-        width:min(380px,92vw);
-      }
+    /* Responsive */
+    @media (max-width:640px){
+      #simp-pillars{padding:72px 16px;}
       #simp-pillars .simp-pillar{
-        width:132px;
-        height:132px;
-        font-size:11px;
+        width:128px;height:128px;font-size:11px;
       }
-      #simp-pillars .simp-pill-title{
-        font-size:12px;
-      }
-      #simp-pillars .simp-pill-sub{
-        font-size:10px;
-      }
-    }
-
-    /* Small phones */
-    @media (max-width:480px){
-      #simp-pillars{
-        padding:64px 12px;
-      }
-      #simp-pillars .simp-diagram{
-        width:min(320px,96vw);
-      }
-      #simp-pillars .simp-core{
-        inset:26% !important;
-      }
-      #simp-pillars .simp-pillar{
-        width:118px;
-        height:118px;
-        font-size:10px;
-      }
-      #simp-pillars .simp-pill-title{
-        font-size:11px;
-      }
-      #simp-pillars .simp-pill-label{
-        font-size:9px;
-      }
-      #simp-pillars .simp-footnote{
-        font-size:10px;
-        margin-top:22px;
-      }
-    }
-
-    /* Respect users that prefer reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      #simp-pillars .simp-orbit-ring,
-      #simp-pillars .simp-core-orbit,
-      #simp-pillars .simp-core-sun{
-        animation:none !important;
-      }
-      #simp-pillars .simp-fade{
-        transition:none !important;
-      }
+      #simp-pillars .simp-pill-title{font-size:12px;}
     }
   </style>
 
@@ -1620,8 +731,7 @@
   </script>
 </section>
 
-
-<section id="simp-pillars" style="position:relative;padding:30px 24px;max-width:1100px;margin:0 auto;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Inter',system-ui,sans-serif;">
+<section id="simp-pillars" style="position:relative;padding:80px 24px;max-width:1100px;margin:0 auto;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Inter',system-ui,sans-serif;">
   <!-- soft glow background -->
   <div style="position:absolute;inset:-40%;background:
       radial-gradient(circle at 20% 0%,rgba(129,140,248,0.4),transparent 55%),
@@ -1656,7 +766,7 @@
       <!-- outer faint ring -->
       <div style="position:absolute;inset:6%;border-radius:50%;border:1px dashed rgba(148,163,184,0.35);"></div>
 
-      <!-- static centre core -->
+      <!-- static centre core (NO rotation) -->
       <div class="pillars-core">
         <div class="core-bg"></div>
 
@@ -1854,7 +964,6 @@
       transform-origin: center center;
     }
 
-    /* desktop orbit radius */
     #simp-pillars .pillar-1 {
       transform: translate(-50%, -50%) rotate(0deg) translateY(-50%) translateY(-120px);
     }
@@ -1949,135 +1058,52 @@
 
     /* animations */
     @keyframes orbit-spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     @keyframes core-orbit-spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     @keyframes pulse-core {
-      0%,100% {
+      0%,
+      100% {
         transform: translate(-50%, -50%) scale(1);
         box-shadow: 0 0 20px rgba(250, 204, 21, 0.7);
       }
+
       50% {
         transform: translate(-50%, -50%) scale(1.08);
         box-shadow: 0 0 36px rgba(250, 204, 21, 1);
       }
     }
 
-    /* ========== RESPONSIVE BREAKPOINTS ========== */
-
-    /* Tablets / small laptops */
-    @media (max-width: 1024px) {
+    /* responsive tweaks */
+    @media (max-width: 640px) {
       #simp-pillars {
-        padding: 72px 20px;
+        padding: 60px 16px;
       }
-      #simp-pillars .pillars-orbit {
-        width: min(380px, 82vw);
-      }
-      #simp-pillars .pillar-bubble {
-        width: 130px;
-        height: 130px;
-      }
-      #simp-pillars .pillar-1,
-      #simp-pillars .pillar-2,
-      #simp-pillars .pillar-3,
-      #simp-pillars .pillar-4 {
-        transform: translate(-50%, -50%) rotate(var(--angle, 0deg)) translateY(-50%) translateY(-110px);
-      }
-      #simp-pillars .pillar-1 { --angle: 0deg; }
-      #simp-pillars .pillar-2 { --angle: 90deg; }
-      #simp-pillars .pillar-3 { --angle: 180deg; }
-      #simp-pillars .pillar-4 { --angle: 270deg; }
-    }
 
-    /* Tablets & large phones (portrait) */
-    @media (max-width: 768px) {
-      #simp-pillars {
-        padding: 64px 16px;
-      }
-      #simp-pillars .pillars-orbit {
-        width: min(340px, 88vw);
-      }
-      #simp-pillars .pillars-core {
-        inset: 20%;
-      }
-      #simp-pillars .core-title {
-        font-size: 13px;
-      }
-      #simp-pillars .core-sub {
-        font-size: 10px;
-        max-width: 180px;
-      }
       #simp-pillars .pillar-bubble {
         width: 120px;
         height: 120px;
         font-size: 11px;
-        padding: 14px;
       }
+
       #simp-pillars .pillar-title {
         font-size: 12px;
-      }
-      #simp-pillars .pillar-sub {
-        font-size: 10px;
-      }
-      #simp-pillars .pillar-1,
-      #simp-pillars .pillar-2,
-      #simp-pillars .pillar-3,
-      #simp-pillars .pillar-4 {
-        transform: translate(-50%, -50%) rotate(var(--angle, 0deg)) translateY(-50%) translateY(-100px);
-      }
-    }
-
-    /* Small phones */
-    @media (max-width: 480px) {
-      #simp-pillars {
-        padding: 56px 12px;
-      }
-      #simp-pillars .pillars-orbit {
-        width: min(300px, 92vw);
-      }
-      #simp-pillars .pillars-core {
-        inset: 22%;
-      }
-      #simp-pillars .core-solar {
-        width: 78%;
-      }
-      #simp-pillars .core-title {
-        font-size: 12px;
-      }
-      #simp-pillars .core-sub {
-        font-size: 10px;
-      }
-      #simp-pillars .pillar-bubble {
-        width: 110px;
-        height: 110px;
-        padding: 12px;
-      }
-      #simp-pillars .pillar-title {
-        font-size: 11px;
-      }
-      #simp-pillars .pillar-index {
-        font-size: 9px;
-      }
-      #simp-pillars .pillar-1,
-      #simp-pillars .pillar-2,
-      #simp-pillars .pillar-3,
-      #simp-pillars .pillar-4 {
-        transform: translate(-50%, -50%) rotate(var(--angle, 0deg)) translateY(-50%) translateY(-88px);
-      }
-    }
-
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      #simp-pillars .pillars-ring,
-      #simp-pillars .core-orbit,
-      #simp-pillars .core-sun {
-        animation: none !important;
       }
     }
   </style>
@@ -2087,8 +1113,7 @@
 
 
 
-
-   <section id="edge" style="max-width:1200px;margin:0 auto;padding:30px 24px;position:relative;overflow:hidden;">
+   <section id="edge" style="max-width:1200px;margin:0 auto;padding:80px 24px;position:relative;overflow:hidden;">
   <!-- Background Elements -->
   <div style="position:absolute;top:-50%;left:-10%;width:60%;height:200%;background:radial-gradient(circle at center, rgba(99,102,241,0.03) 0%, transparent 70%);transform:rotate(15deg);z-index:0;"></div>
   <div style="position:absolute;bottom:-30%;right:-10%;width:60%;height:200%;background:radial-gradient(circle at center, rgba(34,211,238,0.03) 0%, transparent 70%);transform:rotate(-10deg);z-index:0;"></div>
@@ -2217,7 +1242,7 @@
       <span>Our Services</span>
     </div>
 
-    <div class="services-header-row" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:30px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:30px;">
       <div style="max-width:700px;">
         <h2 style="margin:0 0 16px 0;font-size:clamp(24px, 4vw, 36px);line-height:1.2;font-weight:800;color:#f9fafb;letter-spacing:-0.02em;">
           Growth Services, <span style="background:linear-gradient(135deg,#8b5cf6,#6366f1);-webkit-background-clip:text;color:transparent;">Engineered for Scale</span>
@@ -2226,14 +1251,14 @@
           Every service is a building block of intelligence. Together, they create self-learning, self-selling systems.
         </p>
       </div>
-      <a href="#cta" class="services-cta" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;background:linear-gradient(135deg,#8b5cf6,#6366f1);color:white;text-decoration:none;font-size:14px;font-weight:500;transition:all 0.3s ease;box-shadow:0 4px 15px -3px rgba(99, 102, 241, 0.3);white-space:nowrap;">
+      <a href="#cta" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;background:linear-gradient(135deg,#8b5cf6,#6366f1);color:white;text-decoration:none;font-size:14px;font-weight:500;transition:all 0.3s ease;box-shadow:0 4px 15px -3px rgba(99, 102, 241, 0.3);">
         Let's Build Something Smart
         <span style="font-size:16px;">→</span>
       </a>
     </div>
 
     <!-- Tabs -->
-    <div class="services-tabs-wrap" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;position:relative;z-index:1;">
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;position:relative;z-index:1;">
       <button data-tab="ugdex" class="service-tab active" style="padding:10px 20px;border-radius:10px;border:1px solid rgba(139,92,246,0.3);background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(99,102,241,0.15));color:#a5b4fc;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.3s ease;display:flex;align-items:center;gap:8px;">
         <span>UGDex</span>
         <span style="opacity:0.7;font-size:12px;">Human Content Engine</span>
@@ -2254,9 +1279,9 @@
 
     <!-- Content + Laptop -->
     <div style="border-radius:20px;background:linear-gradient(145deg, rgba(15,23,42,0.8), rgba(15,23,42,0.95));border:1px solid rgba(148,163,184,0.2);overflow:hidden;box-shadow:0 10px 30px -10px rgba(0,0,0,0.2);backdrop-filter:blur(8px);">
-      <div class="services-layout">
+      <div style="display:grid;grid-template-columns:1.6fr 1.2fr;min-height:340px;">
         <!-- Main Content -->
-        <div class="services-content-col">
+        <div style="padding:30px;border-right:1px solid rgba(148,163,184,0.1);">
           <!-- UGDex Panel -->
           <div data-panel="ugdex" class="service-panel">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
@@ -2268,7 +1293,7 @@
                 </p>
               </div>
             </div>
-            <ul style="margin:0;padding:0;display:grid;gap:12px;list-style:none;">
+            <ul style="margin:0;padding:0;display:grid;gap:12px;">
               <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5;">
                 <span style="color:#22d3ee;font-size:18px;line-height:1;">•</span>
                 <span>Identify the right creators through audience and community mapping.</span>
@@ -2305,7 +1330,7 @@
                 </p>
               </div>
             </div>
-            <ul style="margin:0;padding:0;display:grid;gap:12px;list-style:none;">
+            <ul style="margin:0;padding:0;display:grid;gap:12px;">
               <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5;">
                 <span style="color:#22c55e;font-size:18px;line-height:1;">•</span>
                 <span>Automate lead capture, qualification, and CRM follow-ups across channels.</span>
@@ -2314,11 +1339,11 @@
                 <span style="color:#22c55e;font-size:18px;line-height:1;">•</span>
                 <span>Build ecommerce workflows that trigger messages, offers, and upsells automatically.</span>
               </li>
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5;">
+              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5%;">
                 <span style="color:#22c55e;font-size:18px;line-height:1;">•</span>
                 <span>Create AI agents for support, sales, and ops that plug into your existing tools.</span>
               </li>
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5;">
+              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5%;">
                 <span style="color:#22c55e;font-size:18px;line-height:1;">•</span>
                 <span>Connect CRMs, payment gateways, and analytics so data flows instead of getting stuck.</span>
               </li>
@@ -2342,7 +1367,7 @@
                 </p>
               </div>
             </div>
-            <ul style="margin:0;padding:0;display:grid;gap:12px;list-style:none;">
+            <ul style="margin:0;padding:0;display:grid;gap:12px;">
               <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5;">
                 <span style="color:#a855f7;font-size:18px;line-height:1;">•</span>
                 <span>Custom-coded websites (React, Next.js, Node) with conversion logic built in.</span>
@@ -2351,17 +1376,17 @@
                 <span style="color:#a855f7;font-size:18px;line-height:1;">•</span>
                 <span>Shopify stores engineered for speed, retention, and personalized journeys.</span>
               </li>
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5%;">
+              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5;">
                 <span style="color:#a855f7;font-size:18px;line-height:1;">•</span>
                 <span>AI integrations: chatbots, recommenders, dynamic pricing and UX.</span>
               </li>
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5%;">
+              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5;">
                 <span style="color:#a855f7;font-size:18px;line-height:1;">•</span>
                 <span>API & CMS automation that keeps your digital stack in sync.</span>
               </li>
             </ul>
             <div style="margin-top:24px;padding:12px;border-radius:10px;background:rgba(168,85,247,0.06);border:1px solid rgba(168,85,247,0.16);">
-              <p style="margin:0;font-size:13px;color:#ede9fe;font-style:italic;display:flex;align-items:flex-start;gap:8px;line-height:1.5%;">
+              <p style="margin:0;font-size:13px;color:#ede9fe;font-style:italic;display:flex;align-items:flex-start;gap:8px;line-height:1.5;">
                 <span style="color:#a855f7;font-size:16px;">💬</span>
                 <span>Where design meets data — and clicks turn into customers.</span>
               </p>
@@ -2374,31 +1399,31 @@
               <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(249,115,22,0.2),rgba(249,115,22,0.08));display:flex;align-items:center;justify-content:center;font-size:20px;color:#f97316;flex-shrink:0;">📈</div>
               <div>
                 <h3 style="margin:0 0 4px 0;font-size:20px;color:#f9fafb;font-weight:700;">AdDex — Performance & Creative</h3>
-                <p style="margin:0;font-size:14px;color:#9ca3af;line-height:1.5%;">
+                <p style="margin:0;font-size:14px;color:#9ca3af;line-height:1.5;">
                   Creative that performs. Data that inspires.
                 </p>
               </div>
             </div>
-            <ul style="margin:0;padding:0;display:grid;gap:12px;list-style:none;">
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5%;">
+            <ul style="margin:0;padding:0;display:grid;gap:12px;">
+              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5;">
                 <span style="color:#f97316;font-size:18px;line-height:1;">•</span>
                 <span>AI-driven ad campaigns across Meta, Google, LinkedIn and beyond.</span>
               </li>
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5%;">
+              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5;">
                 <span style="color:#f97316;font-size:18px;line-height:1;">•</span>
                 <span>Real-time creative and budget optimization using predictive intelligence.</span>
               </li>
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5%;">
+              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5;">
                 <span style="color:#f97316;font-size:18px;line-height:1;">•</span>
                 <span>Full content calendar management with automation hooks.</span>
               </li>
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5%;">
+              <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#e5e7eb;line-height:1.5;">
                 <span style="color:#f97316;font-size:18px;line-height:1;">•</span>
                 <span>Photoshoots & AI-enhanced visuals that actually stop the scroll.</span>
               </li>
             </ul>
             <div style="margin-top:24px;padding:12px;border-radius:10px;background:rgba(249,115,22,0.06);border:1px solid rgba(249,115,22,0.16);">
-              <p style="margin:0;font-size:13px;color:#fed7aa;font-style:italic;display:flex;align-items:flex-start;gap:8px;line-height:1.5%;">
+              <p style="margin:0;font-size:13px;color:#fed7aa;font-style:italic;display:flex;align-items:flex-start;gap:8px;line-height:1.5;">
                 <span style="color:#f97316;font-size:16px;">💬</span>
                 <span>Creative meets algorithm — powered by real-time learning.</span>
               </p>
@@ -2406,9 +1431,9 @@
           </div>
         </div>
 
-        <!-- Laptop Column -->
-        <div class="services-laptop-col">
-          <div style="width:100%;max-width:380px;margin:0 auto;">
+        <!-- Bigger Laptop Window / Screen -->
+        <div style="padding:30px;background:linear-gradient(145deg, rgba(15,23,42,0.9), rgba(15,23,42,0.98));border-left:1px solid rgba(148,163,184,0.1);display:flex;align-items:center;justify-content:center;">
+          <div style="width:100%;max-width:380px;">
 
             <!-- laptop screen -->
             <div style="border-radius:18px 18px 12px 12px;background:#020617;border:1px solid rgba(148,163,184,0.35);box-shadow:0 18px 40px rgba(15,23,42,0.95);overflow:hidden;margin:0 auto 14px auto;">
@@ -2466,114 +1491,139 @@
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    /* Layout controlled via CSS (no inline grid-cols) */
-    #services .services-layout {
-      display: grid;
-      grid-template-columns: 1.6fr 1.2fr;
-      min-height: 340px;
-    }
-
-    #services .services-content-col {
-      padding: 30px;
-      border-right: 1px solid rgba(148,163,184,0.1);
-    }
-
-    #services .services-laptop-col {
-      padding: 30px;
-      background: linear-gradient(145deg, rgba(15,23,42,0.9), rgba(15,23,42,0.98));
-      border-left: 1px solid rgba(148,163,184,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* ========== RESPONSIVE ========== */
-
-    /* Tablets / small laptops */
-    @media (max-width: 1024px) {
-      #services {
-        padding: 56px 20px !important;
-      }
-      #services .services-layout {
-        grid-template-columns: 1.3fr 1fr;
-      }
-    }
-
-    /* Tablets & large phones (stack columns) */
-    @media (max-width: 768px) {
-      #services {
-        padding: 52px 16px !important;
-      }
-
-      #services .services-header-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
-      #services .services-cta {
-        align-self: stretch;
-        justify-content: center;
-        text-align: center;
-      }
-
-      #services .services-layout {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-
-      /* Remove vertical split, add horizontal */
-      #services .services-content-col {
-        border-right: none;
-        border-bottom: 1px solid rgba(148,163,184,0.16);
-      }
-
-      #services .services-laptop-col {
-        border-left: none;
-        padding-top: 20px;
-      }
-
-      #services .services-tabs-wrap {
-        gap: 6px;
-      }
-    }
-
-    /* Small phones */
-    @media (max-width: 480px) {
-      #services {
-        padding: 48px 12px !important;
-      }
-
-      #services .services-header-row {
-        text-align: left;
-      }
-
-      #services h2 {
-        font-size: 22px;
-      }
-
-      #services .services-tabs-wrap {
-        flex-direction: column;
-      }
-
-      #services .service-tab {
-        width: 100%;
-        justify-content: space-between;
-      }
-
-      #services .services-content-col {
-        padding: 22px 16px;
-      }
-
-      #services .services-laptop-col {
-        padding: 22px 16px;
-      }
-    }
   </style>
 </section>
 
 <script>
+  // Mobile Menu Toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    // Toggle mobile menu
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', function() {
+        const isOpen = mobileMenu.style.display === 'block';
+        mobileMenu.style.display = isOpen ? 'none' : 'block';
+        mobileMenuBtn.innerHTML = isOpen ? '☰' : '✕';
+      });
+      
+      // Close menu when clicking on a link
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.style.display = 'none';
+          mobileMenuBtn.innerHTML = '☰';
+        });
+      });
+      
+      // Show/hide mobile menu button based on screen size
+      function handleResize() {
+        if (window.innerWidth <= 768) {
+          mobileMenuBtn.style.display = 'block';
+          mobileMenu.style.display = 'none';
+        } else {
+          mobileMenuBtn.style.display = 'none';
+          mobileMenu.style.display = 'none';
+          mobileMenuBtn.innerHTML = '☰';
+        }
+      }
+      
+      // Initial check
+      handleResize();
+      
+      // Add resize listener
+      window.addEventListener('resize', handleResize);
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Offset for fixed header
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Navbar scroll effect
+    const nav = document.querySelector('nav');
+    if (nav) {
+      let lastScroll = 0;
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+          nav.style.transform = 'translateY(0)';
+          return;
+        }
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+          // Scrolling down
+          nav.style.transform = 'translateY(-100%)';
+        } else {
+          // Scrolling up
+          nav.style.transform = 'translateY(0)';
+        }
+        lastScroll = currentScroll;
+      });
+    }
+  });
+
+  // Typewriter Effect for Hero Section
+  document.addEventListener('DOMContentLoaded', function() {
+    const typewriterElement = document.getElementById('typewriter');
+    const taglines = [
+      'AI-Powered Growth Engine',
+      'Data-Driven Marketing',
+      'Creative Automation',
+      'Performance Marketing',
+      'AI-First Solutions'
+    ];
+    let taglineIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100; // ms
+    let currentText = '';
+
+    function typeWriter() {
+      const currentTagline = taglines[taglineIndex];
+      
+      if (isDeleting) {
+        // Delete characters
+        currentText = currentTagline.substring(0, currentText.length - 1);
+        typingSpeed = 50;
+      } else {
+        // Type characters
+        currentText = currentTagline.substring(0, currentText.length + 1);
+        typingSpeed = 100;
+      }
+
+      typewriterElement.textContent = currentText;
+
+      if (!isDeleting && currentText === currentTagline) {
+        // Pause at the end of typing
+        typingSpeed = 2000; // Pause at end of word
+        isDeleting = true;
+      } else if (isDeleting && currentText === '') {
+        // Move to next tagline
+        isDeleting = false;
+        taglineIndex = (taglineIndex + 1) % taglines.length;
+        typingSpeed = 500; // Pause before starting next word
+      }
+
+      setTimeout(typeWriter, typingSpeed);
+    }
+
+    // Start the typewriter effect after a short delay
+    setTimeout(typeWriter, 1000);
+  });
+
   // Laptop configs for the services section
   const laptopConfigs = {
     ugdex: {

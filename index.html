@@ -3332,8 +3332,8 @@
 
     <!-- 7. TESTIMONIALS -->
 <!-- SCALE WITHOUT SWITCHING TOOLS – EXACT LAYOUT (SEO CARD RIGHT) -->
-<section style="background:#000;padding:80px 40px;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',system-ui,sans-serif;color:#fff;">
-  <div style="max-width:1180px;margin:0 auto;">
+<section id="scale-tools" style="background:#000;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',system-ui,sans-serif;color:#fff;">
+  <div class="scale-inner" style="max-width:1180px;margin:0 auto;padding:80px 40px;">
 
     <!-- TITLE -->
     <h2 style="margin:0 0 40px 0;font-size:54px;line-height:1.05;font-weight:700;letter-spacing:-0.04em;">
@@ -3341,10 +3341,10 @@
     </h2>
 
     <!-- MAIN 2-COLUMN LAYOUT -->
-    <div style="display:flex;gap:24px;align-items:flex-start;">
+    <div class="scale-layout" style="display:flex;gap:24px;align-items:flex-start;">
 
       <!-- LEFT COLUMN (Analytics only) -->
-      <div style="flex:1 1 50%;min-width:360px;display:flex;flex-direction:column;gap:24px;">
+      <div class="scale-col scale-col-left" style="flex:1 1 50%;display:flex;flex-direction:column;gap:24px;">
 
         <!-- ANALYTICS CARD -->
         <div style="background:#050509;border-radius:26px;padding:28px;position:relative;overflow:hidden;border:1px solid #111;">
@@ -3427,7 +3427,7 @@
       </div>
 
       <!-- RIGHT COLUMN (A/B card + SEO card) -->
-      <div style="flex:1 1 50%;min-width:360px;display:flex;flex-direction:column;gap:24px;">
+      <div class="scale-col scale-col-right" style="flex:1 1 50%;display:flex;flex-direction:column;gap:24px;">
 
         <!-- A/B TESTING CARD -->
         <div style="background:#050509;border-radius:26px;padding:28px;position:relative;overflow:hidden;border:1px solid #111;">
@@ -3506,7 +3506,62 @@
     </div>
 
   </div>
+
+  <style>
+    /* ====== RESPONSIVE LAYOUT FOR SCALE SECTION ====== */
+
+    /* Tablet / small desktop tweaks */
+    @media (max-width: 1024px) {
+      #scale-tools .scale-inner {
+        padding: 70px 32px;
+      }
+      #scale-tools h2 {
+        font-size: 42px;
+      }
+    }
+
+    /* Tablets & large phones (stack columns) */
+    @media (max-width: 768px) {
+      #scale-tools .scale-inner {
+        padding: 60px 20px;
+      }
+
+      #scale-tools .scale-layout {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      #scale-tools .scale-col {
+        width: 100%;
+      }
+
+      /* Make title more compact */
+      #scale-tools h2 {
+        font-size: 34px;
+        margin-bottom: 28px;
+      }
+    }
+
+    /* Small phones */
+    @media (max-width: 480px) {
+      #scale-tools .scale-inner {
+        padding: 48px 16px;
+      }
+
+      #scale-tools h2 {
+        font-size: 30px;
+        line-height: 1.1;
+      }
+
+      #scale-tools .scale-col-left > div,
+      #scale-tools .scale-col-right > div {
+        padding: 22px;
+        border-radius: 22px;
+      }
+    }
+  </style>
 </section>
+
 
 
 
@@ -3649,13 +3704,13 @@
 
 
     <!-- 8. CTA SECTION -->
-   <section id="cta" style="max-width:1120px;margin:0 auto;padding:0 24px 80px;position:relative;">
+ <section id="cta" style="max-width:1120px;margin:0 auto;padding:30px 24px 30px;position:relative;">
   <!-- Background Elements -->
   <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 10% 20%, rgba(34,211,238,0.1) 0%, transparent 30%),radial-gradient(circle at 90% 80%, rgba(139,92,246,0.1) 0%, transparent 30%);z-index:0;"></div>
   
-  <div style="position:relative;z-index:1;">
+  <div class="cta-inner" style="position:relative;z-index:1;">
     <!-- Main CTA Card -->
-    <div style="border-radius:24px;background:linear-gradient(145deg, rgba(15,23,42,0.9), rgba(15,23,42,0.98));border:1px solid rgba(148,163,184,0.2);padding:60px 40px;text-align:center;box-shadow:0 20px 40px -10px rgba(0,0,0,0.2);position:relative;overflow:hidden;backdrop-filter:blur(8px);">
+    <div class="cta-card" style="border-radius:24px;background:linear-gradient(145deg, rgba(15,23,42,0.9), rgba(15,23,42,0.98));border:1px solid rgba(148,163,184,0.2);padding:60px 40px;text-align:center;box-shadow:0 20px 40px -10px rgba(0,0,0,0.2);position:relative;overflow:hidden;backdrop-filter:blur(8px);">
       <!-- Decorative Elements -->
       <div style="position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle, rgba(56,189,248,0.15) 0%, rgba(56,189,248,0) 70%);pointer-events:none;"></div>
       <div style="position:absolute;bottom:-150px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle, rgba(139,92,246,0.1) 0%, rgba(139,92,246,0) 70%);pointer-events:none;"></div>
@@ -3684,7 +3739,7 @@
             <div style="font-size:20px;font-weight:700;color:#22c55e;margin-bottom:4px;">42%</div>
             <div style="font-size:12px;color:#9ca3af;">Avg. Growth</div>
           </div>
-          <div class="stat-item" style="padding:12px;border-radius:12px;background:rgba(15,23,184,0.6);border:1px solid rgba(148,163,184,0.1);transition:all 0.3s ease;">
+          <div class="stat-item" style="padding:12px;border-radius:12px;background:rgba(15,23,42,0.6);border:1px solid rgba(148,163,184,0.1);transition:all 0.3s ease;">
             <div style="font-size:20px;font-weight:700;color:#8b5cf6;margin-bottom:4px;">98%</div>
             <div style="font-size:12px;color:#9ca3af;">Client Retention</div>
           </div>
@@ -3695,20 +3750,20 @@
         </div>
         
         <!-- Buttons -->
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:24px;">
-          <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#8b5cf6,#6366f1);color:white;padding:14px 32px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(139, 92, 246, 0.3);border:none;cursor:pointer;">
+        <div class="cta-buttons" style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:24px;">
+          <a href="#contact" class="cta-primary" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#8b5cf6,#6366f1);color:white;padding:14px 32px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(139, 92, 246, 0.3);border:none;cursor:pointer;">
             Book a Free AI Strategy Call
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition:transform 0.3s ease;">
               <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <a href="#services" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#e5e7eb;padding:14px 32px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;transition:all 0.3s ease;border:1px solid rgba(148,163,184,0.5);">
+          <a href="#services" class="cta-secondary" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#e5e7eb;padding:14px 32px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;transition:all 0.3s ease;border:1px solid rgba(148,163,184,0.5);">
             Explore Our Services
           </a>
         </div>
         
         <!-- Trust Badges -->
-        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin-top:8px;">
+        <div class="cta-trust" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin-top:8px;">
           <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#9ca3af;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:#22c55e;">
               <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -3754,11 +3809,71 @@
       background: rgba(148,163,184,0.1);
       border-color: rgba(148,163,184,0.5);
     }
+
+    /* ========= RESPONSIVE ========= */
+
+    /* Tablet / small desktop */
+    @media (max-width: 1024px) {
+      #cta {
+        padding: 0 20px 70px !important;
+      }
+      #cta .cta-card {
+        padding: 48px 32px !important;
+      }
+    }
+
+    /* Tablets & large phones */
+    @media (max-width: 768px) {
+      #cta {
+        padding: 30px 16px 60px !important;
+      }
+      #cta .cta-card {
+        padding: 40px 24px !important;
+      }
+      #cta h2 {
+        font-size: 26px;
+      }
+      #cta .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      #cta .cta-primary,
+      #cta .cta-secondary {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+      #cta .cta-trust {
+        gap: 8px;
+      }
+    }
+
+    /* Small phones */
+    @media (max-width: 480px) {
+      #cta {
+        padding: 30px 12px 48px !important;
+      }
+      #cta .cta-card {
+        padding: 32px 18px !important;
+        border-radius: 20px;
+      }
+      #cta h2 {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      #cta p {
+        font-size: 13px;
+      }
+      #cta .stat-item {
+        padding: 10px;
+      }
+    }
   </style>
 </section>
 
+
 <!-- HERO WITH MOON ARC BACKGROUND -->
-<section 
+<section id="hero-moon"
   style="
     position:relative;
     background:#000;
@@ -3769,7 +3884,7 @@
   "
 >
 
-  <!-- MOON ARC (PERFECT MATCH TO YOUR IMAGE) -->
+  <!-- MOON ARC -->
   <div
     style="
       position:absolute;
@@ -3809,8 +3924,9 @@
       and AI collaborate
     </h1>
 
-    <div style="display:inline-flex;align-items:center;gap:22px;font-size:15px;">
+    <div class="hero-moon-cta-wrap" style="display:inline-flex;align-items:center;gap:22px;font-size:15px;">
       <button
+        class="hero-moon-primary"
         style="
           padding:12px 26px;
           border-radius:999px;
@@ -3825,6 +3941,7 @@
       </button>
 
       <button
+        class="hero-moon-secondary"
         style="
           padding:12px 0;
           border:none;
@@ -3839,11 +3956,60 @@
     </div>
   </div>
 
+  <style>
+    /* Tablet / small desktop */
+    @media (max-width: 1024px) {
+      #hero-moon {
+        padding:180px 20px 140px !important;
+      }
+      #hero-moon h1 {
+        font-size:36px !important;
+      }
+    }
+
+    /* Tablets & large phones */
+    @media (max-width: 768px) {
+      #hero-moon {
+        padding:150px 16px 110px !important;
+      }
+      #hero-moon h1 {
+        font-size:30px !important;
+        line-height:1.2 !important;
+      }
+      #hero-moon .hero-moon-cta-wrap {
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:stretch !important;
+        gap:12px !important;
+        width:100%;
+        max-width:320px;
+        margin:0 auto;
+      }
+      #hero-moon .hero-moon-primary,
+      #hero-moon .hero-moon-secondary {
+        width:100%;
+      }
+      #hero-moon .hero-moon-secondary {
+        padding:12px 16px !important;
+      }
+    }
+
+    /* Small phones */
+    @media (max-width: 480px) {
+      #hero-moon {
+        padding:130px 14px 90px !important;
+      }
+      #hero-moon h1 {
+        font-size:26px !important;
+      }
+    }
+  </style>
 </section>
 
 
+
     <!-- 9. FOOTER -->
-<footer style="max-width:1160px;margin:0 auto;padding:60px 24px 0;position:relative;overflow:hidden;background:linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.9)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxRDI4M0YiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');">
+<footer style="max-width:100%;margin:0 auto;padding:60px 24px 0;position:relative;overflow:hidden;background:linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.9)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxRDI4M0YiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');">
   <!-- Background Elements -->
   <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 20% 30%, rgba(99,102,241,0.03) 0%, transparent 50%),radial-gradient(circle at 80% 70%, rgba(34,211,238,0.03) 0%, transparent 50%);z-index:0;"></div>
   
